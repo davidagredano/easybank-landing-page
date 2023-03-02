@@ -10,25 +10,37 @@
 // ## Colors
 
 // ### Primary
-
-$dark-blue: hsl(233, 26%, 24%);
-$lime-green: hsl(136, 65%, 51%);
-$bright-cyan: hsl(192, 70%, 51%);
+$color-primary-Dark-Blue: hsl(233, 26%, 24%);
+$color-primary-Lime-Green: hsl(136, 65%, 51%);
+$color-primary-Bright-Cyan: hsl(192, 70%, 51%);
 
 // ### Neutral
-
-// - Grayish Blue: hsl(233, 8%, 62%)
-// - Light Grayish Blue: hsl(220, 16%, 96%)
-// - Very Light Gray: hsl(0, 0%, 98%)
-// - White: hsl(0, 0%, 100%)
+$color-neutral-Grayish-Blue: hsl(233, 8%, 62%);
+$color-neutral-Light-Grayish-Blue: hsl(220, 16%, 96%);
+$color-neutral-Very-Light-Gray: hsl(0, 0%, 98%);
+$color-neutral-White: hsl(0, 0%, 100%);
 
 // ## Typography
 
 // ### Body Copy
-
-// - Font size: 18px
+$font-weight-light: 300;
+$font-weight-medium: 400;
+$font-weight-bold: 700;
 
 // ### Font
+@mixin font($size: 1rem, $weight: $font-weight-medium) {
+  font-family: "Public Sans", sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+}
 
-// - Family: [Public Sans](https://fonts.google.com/specimen/Public+Sans)
-// - Weights: 300, 400, 700
+@mixin reset {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin center {
+  justify-content: center;
+  align-items: center;
+}
