@@ -28,10 +28,15 @@ $font-weight-medium: 400;
 $font-weight-bold: 700;
 
 // ### Font
-@mixin font($size: 1rem, $weight: $font-weight-medium) {
+@mixin font(
+  $size: 1rem,
+  $weight: $font-weight-medium,
+  $color: $color-primary-Dark-Blue
+) {
   font-family: "Public Sans", sans-serif;
   font-size: $size;
   font-weight: $weight;
+  color: $color;
 }
 
 @mixin reset {
@@ -43,4 +48,12 @@ $font-weight-bold: 700;
 @mixin center {
   justify-content: center;
   align-items: center;
+}
+
+@mixin flex($flex-direction, $justify-content, $align-items, $row-gap) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  row-gap: $row-gap;
 }

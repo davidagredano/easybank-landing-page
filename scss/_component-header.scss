@@ -2,18 +2,18 @@
 
 .l-header {
   @include reset;
-  padding: 0 1.3rem 0 1.3rem;
-  position: fixed;
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 4rem;
+  padding: 0 1.4rem 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   row-gap: 0;
-  width: 100%;
-  height: 3.5rem;
-  top: 0;
   background-color: $color-neutral-White;
-  z-index: 1;
 }
 
 .logo {
@@ -24,26 +24,29 @@
 
 .nav {
   @include reset;
-  visibility: hidden;
 
   &__list {
+    &--hidden {
+      visibility: hidden;
+    }
     @include reset;
   }
 
   &__item {
     @include reset;
-    @include font();
   }
 
   &__link {
     @include reset;
-    @include font();
   }
 }
 
 .cta-button {
   @include reset;
-  visibility: hidden;
+
+  &--hidden {
+    visibility: hidden;
+  }
 
   &__text {
     @include reset;

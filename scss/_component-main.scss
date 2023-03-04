@@ -1,0 +1,144 @@
+@import "variables";
+
+.l-main {
+  @include reset;
+  padding: 0 0 1.5rem;
+  background-color: $color-neutral-Very-Light-Gray;
+  // position: relative;
+  // top: -4rem;
+  // left: 0;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // row-gap: 0;
+  // box-sizing: border-box;
+  // margin: 0;
+}
+
+.section {
+  @include reset;
+  @include flex(column, center, center, 3rem);
+  padding: 4rem 0;
+
+  &--hero {
+    padding-top: 0;
+  }
+
+  &--darker-bg {
+    background-color: $color-neutral-Light-Grayish-Blue;
+  }
+
+  &__wrapper {
+    @include reset;
+    @include flex(column, center, center, 1.35rem);
+    padding: 0 1.5rem;
+
+    &--image {
+      padding: 0 1rem;
+      height: 73vw;
+    }
+
+    &--cards {
+      @include reset;
+      @include flex(column, center, center, 2rem);
+    }
+
+    &--articles {
+      @include reset;
+      @include flex(column, center, center, 1.5rem);
+      padding: 0 1.5rem;
+    }
+  }
+
+  &__image-bg {
+    @include reset;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__image {
+    @include reset;
+    width: 100%;
+    position: relative;
+    bottom: 55px;
+  }
+
+  &__heading {
+    @include reset;
+    @include font(2rem, $font-weight-light);
+    color: $color-primary-Dark-Blue;
+    text-align: center;
+
+    &--bigger {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__copy {
+    @include reset;
+    @include font(0.9rem, $font-weight-medium);
+    line-height: 1.5rem;
+    color: $color-neutral-Grayish-Blue;
+    text-align: center;
+  }
+}
+
+.card {
+  @include reset;
+  @include flex(column, center, center, 1.5rem);
+  padding: 0 1.5rem;
+
+  &__icon {
+    @include reset;
+  }
+
+  &__heading {
+    @include reset;
+    @include font(1.3rem, $font-weight-light);
+    color: $color-primary-Dark-Blue;
+    text-align: center;
+  }
+
+  &__copy {
+    @include reset;
+    @include font(0.9rem, $font-weight-medium);
+    line-height: 1.5rem;
+    color: $color-neutral-Grayish-Blue;
+    text-align: center;
+  }
+}
+
+.article-card {
+  @include reset;
+  @include flex(column, center, center, 1.5rem);
+  background-color: $color-neutral-White;
+  border-radius: 5px;
+
+  &__image {
+    @include reset;
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  &__body {
+    @include reset;
+    @include flex(column, center, flex-start, 0.6rem);
+    padding: 0 1.5rem 3rem;
+  }
+  &__author {
+    @include reset;
+    @include font(0.6rem, $font-weight-light, $color-neutral-Grayish-Blue);
+  }
+  &__title {
+    @include reset;
+    @include font();
+  }
+  &__copy {
+    @include reset;
+    @include font(0.8rem, $font-weight-light, $color-neutral-Grayish-Blue);
+    line-height: 1.1rem;
+  }
+}
