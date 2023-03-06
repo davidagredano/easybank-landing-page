@@ -17,11 +17,11 @@
 
 .section {
   @include reset;
-  @include flex(column, center, center, 3rem);
+  @include flex(column, center, center, 2rem);
   padding: 4rem 0;
 
   &--hero {
-    padding-top: 0;
+    padding: 0 0 5rem;
   }
 
   &--darker-bg {
@@ -30,12 +30,17 @@
 
   &__wrapper {
     @include reset;
-    @include flex(column, center, center, 1.35rem);
+    @include flex(column, center, center, 1.05rem);
     padding: 0 1.5rem;
 
     &--image {
+      @include reset;
       padding: 0 1rem;
-      height: 73vw;
+      height: 76vw;
+    }
+
+    &--cta-button {
+      @include reset;
     }
 
     &--cards {
@@ -87,7 +92,7 @@
 
 .card {
   @include reset;
-  @include flex(column, center, center, 1.5rem);
+  @include flex(column, center, center, 1.4rem);
   padding: 0 1.5rem;
 
   &__icon {
@@ -115,6 +120,11 @@
   @include flex(column, center, center, 1.5rem);
   background-color: $color-neutral-White;
   border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0.125rem 0.25rem rgba($color-primary-Dark-Blue, 0.075);
+  }
 
   &__image {
     @include reset;
@@ -135,6 +145,10 @@
   &__title {
     @include reset;
     @include font();
+
+    &:hover {
+      color: $color-primary-Blended;
+    }
   }
   &__copy {
     @include reset;

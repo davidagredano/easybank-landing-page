@@ -13,6 +13,7 @@
 $color-primary-Dark-Blue: hsl(233, 26%, 24%);
 $color-primary-Lime-Green: hsl(136, 65%, 51%);
 $color-primary-Bright-Cyan: hsl(192, 70%, 51%);
+$color-primary-Blended: #37d0ad;
 
 // ### Neutral
 $color-neutral-Grayish-Blue: hsl(233, 8%, 62%);
@@ -50,10 +51,15 @@ $font-weight-bold: 700;
   align-items: center;
 }
 
-@mixin flex($flex-direction, $justify-content, $align-items, $row-gap) {
+@mixin flex(
+  $flex-direction: row,
+  $justify-content: center,
+  $align-items: center,
+  $gap: 0
+) {
   display: flex;
   flex-direction: $flex-direction;
   justify-content: $justify-content;
   align-items: $align-items;
-  row-gap: $row-gap;
+  gap: $gap;
 }

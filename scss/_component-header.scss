@@ -2,24 +2,20 @@
 
 .l-header {
   @include reset;
+  @include flex(row, center, center, 0);
   z-index: 1;
   position: sticky;
   top: 0;
   width: 100%;
   height: 4rem;
   padding: 0 1.4rem 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  row-gap: 0;
   background-color: $color-neutral-White;
 }
 
 .logo {
   @include reset;
-  width: 139;
-  height: 20;
+  // width: 139;
+  // height: 20;
 }
 
 .nav {
@@ -43,13 +39,35 @@
 
 .cta-button {
   @include reset;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: $color-neutral-White;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-Lime-Green,
+    $color-primary-Bright-Cyan
+  );
+  border-radius: (2.7rem / 2);
+
+  &:hover {
+    filter: brightness(1.2) grayscale(0.5);
+    // opacity: 0.6;
+  }
 
   &--hidden {
     visibility: hidden;
   }
 
-  &__text {
+  &__wrap {
     @include reset;
+    @include flex(row, center, center, 0);
+    padding: 0 2rem;
+    line-height: 2.7rem;
+    @include font(
+      0.9rem,
+      $font-weight-medium,
+      $color-neutral-Light-Grayish-Blue
+    );
   }
 }
 

@@ -1,0 +1,64 @@
+@import "variables";
+
+.l-footer {
+  @include reset;
+  padding: 2.5rem 0 3rem;
+  background-color: $color-primary-Dark-Blue;
+  @include flex(column, space-between, center, 2rem);
+}
+
+.social-icons {
+  @include reset;
+
+  &__list {
+    @include reset;
+    @include flex(row, center, center, 1rem);
+    list-style-type: none;
+  }
+  &__item {
+    @include reset;
+  }
+  &__link {
+    @include reset;
+    @include flex();
+  }
+  &__icon {
+    @include reset;
+    width: 24px;
+
+    &:hover {
+      filter: invert(0.5) sepia(1) saturate(5) hue-rotate(115deg);
+    }
+  }
+}
+
+.footer-links {
+  @include reset;
+
+  &__list {
+    @include reset;
+    @include flex(column, center, center, 1rem);
+    list-style-type: none;
+  }
+  &__item {
+    @include reset;
+  }
+  &__link {
+    @include reset;
+    @include font(
+      0.9rem,
+      $font-weight-light,
+      $color-neutral-Light-Grayish-Blue
+    );
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary-Blended;
+    }
+  }
+}
+
+.copyright {
+  @include reset;
+  @include font(0.9rem, $font-weight-medium, $color-neutral-Grayish-Blue);
+}
