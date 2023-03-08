@@ -4,15 +4,6 @@
   @include reset;
   padding: 0 0 1.5rem;
   background-color: $color-neutral-Very-Light-Gray;
-  // position: relative;
-  // top: -4rem;
-  // left: 0;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // row-gap: 0;
-  // box-sizing: border-box;
-  // margin: 0;
 }
 
 .section {
@@ -33,7 +24,11 @@
     @include flex(column, center, center, 1.05rem);
     padding: 0 1.5rem;
 
-    &--image {
+    &--hero {
+      @include reset;
+    }
+
+    &--hero-image {
       @include reset;
       padding: 0 1rem;
       height: 76vw;
@@ -41,6 +36,7 @@
 
     &--cta-button {
       @include reset;
+      margin: 1rem 0;
     }
 
     &--cards {
@@ -73,7 +69,6 @@
   &__heading {
     @include reset;
     @include font(2rem, $font-weight-light);
-    color: $color-primary-Dark-Blue;
     text-align: center;
 
     &--bigger {
@@ -83,9 +78,8 @@
 
   &__copy {
     @include reset;
-    @include font(0.9rem, $font-weight-medium);
+    @include font(0.9rem, $font-weight-medium, $color-neutral-Grayish-Blue);
     line-height: 1.5rem;
-    color: $color-neutral-Grayish-Blue;
     text-align: center;
   }
 }
@@ -102,15 +96,13 @@
   &__heading {
     @include reset;
     @include font(1.3rem, $font-weight-light);
-    color: $color-primary-Dark-Blue;
     text-align: center;
   }
 
   &__copy {
     @include reset;
-    @include font(0.9rem, $font-weight-medium);
+    @include font(0.9rem, $font-weight-medium, $color-neutral-Grayish-Blue);
     line-height: 1.5rem;
-    color: $color-neutral-Grayish-Blue;
     text-align: center;
   }
 }
@@ -119,7 +111,7 @@
   @include reset;
   @include flex(column, center, center, 1.5rem);
   background-color: $color-neutral-White;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
 
   &:hover {
@@ -128,7 +120,7 @@
 
   &__image {
     @include reset;
-    border-radius: 5px 5px 0 0;
+    border-radius: 6px 6px 0 0;
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -154,5 +146,220 @@
     @include reset;
     @include font(0.8rem, $font-weight-light, $color-neutral-Grayish-Blue);
     line-height: 1.1rem;
+  }
+}
+
+//---------------------------------------------------
+//-------------------- @MEDIA -----------------------
+//---------------------------------------------------
+
+@media screen and (min-width: 1440px) {
+  .l-main {
+    // @include reset;
+    // padding: 0 0 1.5rem;
+    padding: 0;
+    // background-color: $color-neutral-Very-Light-Gray;
+    // overflow: hidden;
+  }
+
+  .section {
+    // @include reset;
+    // @include flex(column, center, center, 2rem);
+    @include flex(column, center, center, 3rem);
+    padding: 5.6rem 0;
+
+    &--hero {
+      @include flex(row-reverse, center, center, 2rem);
+      height: 735px;
+      width: 100%;
+      // overflow: hidden;
+      padding: 0;
+    }
+
+    &--darker-bg {
+      // background-color: $color-neutral-Light-Grayish-Blue;
+    }
+
+    &__wrapper {
+      // @include reset;
+      // @include flex(column, center, center, 1.05rem);
+      @include flex(column, center, flex-start, 1.6rem);
+      width: 1110px;
+      // padding: 0 1.5rem;
+      padding: 0;
+      // flex: 1 1 0;
+
+      &--hero {
+        // @include reset;
+        width: calc((1110px - 1rem) / 2);
+        padding: 5.5rem 0 0;
+        // gap: 1.7rem;
+      }
+
+      &--hero-image {
+        // @include reset;
+        display: block;
+        overflow: hidden;
+        height: 735px;
+        width: calc((1110px - 1rem) / 2);
+        // height: 100%;
+        // padding: 0 1rem;
+        // height: 76vw;
+        // flex: 1 1 0;
+      }
+
+      &--cta-button {
+        // @include reset;
+        // margin: 1rem 0;
+        margin: 0.5rem 0;
+      }
+
+      &--cards {
+        // @include reset;
+        // @include flex(column, center, center, 2rem);
+        @include flex(row, center, center, 1.63rem);
+        width: 1110px;
+      }
+
+      &--articles {
+        // @include reset;
+        // @include flex(column, center, center, 1.5rem);
+        @include flex(row, center, center, 1.7rem);
+        // padding: 0 1.5rem;
+        padding: 0;
+        width: 1110px;
+      }
+    }
+
+    &__image-bg {
+      // @include reset;
+      // width: 100%;
+      // position: absolute;
+      position: relative;
+      width: auto;
+      height: 140%;
+      top: -181px;
+      left: -25px;
+      // overflow: hidden;
+    }
+
+    &__image {
+      // @include reset;
+      // position: relative;
+      position: absolute;
+      // z-index: 1;
+      width: auto;
+      height: 122%;
+      top: -44px;
+      right: -10%;
+      // visibility: hidden;
+      // overflow: visible;
+    }
+
+    &__heading {
+      // @include reset;
+      // @include font(2rem, $font-weight-light);
+      @include font(2.4rem, $font-weight-light, $color-primary-Dark-Blue);
+      // text-align: center;
+      text-align: start;
+
+      &--bigger {
+        font-size: 3.4rem;
+      }
+    }
+
+    &__copy {
+      // @include reset;
+      // @include font(0.9rem, $font-weight-medium);
+      @include font(1.085rem, $font-weight-medium, $color-neutral-Grayish-Blue);
+      // line-height: 1.5rem;
+      line-height: 1.8rem;
+      // text-align: center;
+      text-align: start;
+      width: 60%;
+
+      &--header {
+        width: 80%;
+      }
+    }
+  }
+
+  .card {
+    // @include reset;
+    // @include flex(column, center, center, 1.4rem);
+    @include flex(column, center, flex-start, 1.6rem);
+    flex: 1 1 0;
+    // padding: 0 1.5rem;
+    padding: 0;
+
+    &__icon {
+      // @include reset;
+      padding: 1.5rem 0 1rem;
+    }
+
+    &__heading {
+      // @include reset;
+      // @include font(1.3rem, $font-weight-light);
+      @include font(1.45rem, $font-weight-light);
+      // text-align: center;
+      text-align: start;
+    }
+
+    &__copy {
+      // @include reset;
+      // @include font(0.9rem, $font-weight-medium, $color-neutral-Grayish-Blue);
+      @include font(1rem, $font-weight-medium, $color-neutral-Grayish-Blue);
+      // line-height: 1.5rem;
+      line-height: 1.64rem;
+      // text-align: center;
+      text-align: start;
+      font-stretch: ultra-condensed;
+    }
+  }
+
+  .article-card {
+    // @include reset;
+    // @include flex(column, center, center, 1.5rem);
+    @include flex(column, center, center, 1.8rem);
+    // background-color: $color-neutral-White;
+    // border-radius: 6px;
+    // cursor: pointer;
+    flex: 1 1 0;
+
+    &:hover {
+      // box-shadow: 0 0.125rem 0.25rem rgba($color-primary-Dark-Blue, 0.075);
+    }
+
+    &__image {
+      // @include reset;
+      // border-radius: 6px 6px 0 0;
+      // width: 100%;
+      // height: 200px;
+      // object-fit: cover;
+    }
+    &__body {
+      // @include reset;
+      // @include flex(column, center, flex-start, 0.6rem);
+      @include flex(column, center, flex-start, 0.7rem);
+      // padding: 0 1.5rem 3rem;
+      padding: 0 1.5rem 1.5rem;
+    }
+    &__author {
+      // @include reset;
+      // @include font(0.6rem, $font-weight-light, $color-neutral-Grayish-Blue);
+    }
+    &__title {
+      // @include reset;
+      // @include font();
+
+      &:hover {
+        // color: $color-primary-Blended;
+      }
+    }
+    &__copy {
+      // @include reset;
+      // @include font(0.8rem, $font-weight-light, $color-neutral-Grayish-Blue);
+      // line-height: 1.1rem;
+    }
   }
 }
