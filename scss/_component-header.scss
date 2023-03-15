@@ -2,14 +2,22 @@
 
 .l-header {
   @include reset;
-  @include flex(row, space-between, center, 0);
+  @include flex(column, center, center, 0);
   z-index: 1;
   position: sticky;
   top: 0;
   width: 100%;
   height: 4rem;
-  padding: 0 1.4rem 0;
   background-color: $color-neutral-White;
+}
+
+.header__wrapper {
+  @include reset;
+  @include flex(row, space-between, center, 0);
+  width: 100%;
+  max-width: 1110px;
+  height: 100%;
+  padding: 0 1.4rem 0;
 }
 
 .logo {
@@ -20,17 +28,24 @@
 
 .nav {
   @include reset;
+  padding: 2rem 0;
   z-index: 1;
   position: absolute;
   top: 5.5rem;
   left: 1.5rem;
   width: calc(100vw - 3rem);
   background-color: $color-neutral-White;
-  border-radius: 4px;
+  border-radius: 4.5px;
   transition: all 0.2s ease;
   visibility: visible;
 
+  &--desktop {
+    visibility: hidden;
+  }
+
   &--hidden {
+    @include reset;
+    position: absolute;
     top: -270px;
     visibility: hidden;
   }
@@ -47,7 +62,6 @@
 
   &__link {
     @include reset;
-    padding: 2rem 0;
     @include font(1.15rem, $font-weight-medium, $color-primary-Dark-Blue);
     text-decoration: none;
   }
@@ -64,10 +78,13 @@
     $color-primary-Bright-Cyan
   );
   border-radius: calc(2.7rem / 2);
-  // hidden in mobile layout
-  position: absolute;
-  top: -100vh;
-  visibility: hidden;
+
+  &--header {
+    // hidden in mobile layout
+    position: absolute;
+    top: -100vh;
+    visibility: hidden;
+  }
 
   &:hover {
     filter: brightness(1.2) grayscale(0.5);
@@ -93,23 +110,30 @@
 }
 
 //---------------------------------------------------
-//-------------------- @MEDIA -----------------------
+//---------------- @MEDIA TABLET --------------------
 //---------------------------------------------------
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) and (max-width: 1157px) {
   .l-header {
     // @include reset;
     // @include flex(row, space-between, center, 0);
     // z-index: 1;
-    // margin: 0 calc((100vw - 1440px) / 2);
-    padding: 0 calc(((100vw - 1440px) / 2) + 9.25rem) 0
-      calc(((100vw - 1440px) / 2) + 10.25rem);
-    position: absolute;
+    // position: sticky;
+    // position: absolute;
+    // padding: 0 1.5rem;
     // top: 0;
     // width: 100%;
-    height: 5rem;
-    // padding: 0 1.4rem 0;
+    // height: 4rem;
     // background-color: $color-neutral-White;
+  }
+
+  .header__wrapper {
+    // @include reset;
+    // @include flex(row, space-between, center, 0);
+    // width: 100%;
+    // max-width: 1110px;
+    // height: 100%;
+    // padding: 0 1.4rem 0;
   }
 
   .logo {
@@ -131,10 +155,14 @@
     // transition: all 0.2s ease;
     // visibility: visible;
 
-    // &--hidden {
-    //   top: -270px;
-    //   visibility: hidden;
-    // }
+    &--desktop {
+      visibility: visible;
+    }
+
+    &--hidden {
+      //   top: -270px;
+      //   visibility: hidden;
+    }
 
     &__list {
       // @include reset;
@@ -149,7 +177,6 @@
 
     &__link {
       // @include reset;
-      // padding: 2rem 0;
       @include font(0.9rem, $font-weight-medium, $color-neutral-Grayish-Blue);
       // text-decoration: none;
 
@@ -189,6 +216,119 @@
     //       $color-neutral-Light-Grayish-Blue
     //     );
     //   }
+    &--header {
+      // hidden in mobile layout
+      // position: absolute;
+      // top: 0;
+      // visibility: visible;
+    }
+  }
+
+  .hamburger-menu {
+    // z-index: 2;
+    // visibility: visible;
+    position: absolute;
+    top: -100vh;
+    visibility: hidden;
+  }
+}
+
+//---------------------------------------------------
+//---------------- @MEDIA DESKTOP -------------------
+//---------------------------------------------------
+
+@media screen and (min-width: 1158px) {
+  .l-header {
+    padding: 0;
+    // position: absolute;
+    height: 5rem;
+  }
+
+  .header__wrapper {
+    // @include reset;
+    // @include flex(row, space-between, center, 0);
+    // width: 100%;
+    // max-width: 1110px;
+    // height: 100%;
+    padding: 0;
+  }
+
+  .logo {
+    // @include reset;
+    // width: 139;
+    // height: 20;
+  }
+
+  .nav {
+    visibility: hidden;
+
+    &--desktop {
+      visibility: visible;
+    }
+
+    &--hidden {
+      //   top: -270px;
+      //   visibility: hidden;
+    }
+
+    &__list {
+      // @include reset;
+      @include flex(row, center, center, 2rem);
+      // height: 100%;
+    }
+
+    &__item {
+      // @include reset;
+      // list-style-type: none;
+    }
+
+    &__link {
+      // @include reset;
+      @include font(0.9rem, $font-weight-medium, $color-neutral-Grayish-Blue);
+      // text-decoration: none;
+
+      &:hover {
+        color: $color-primary-Dark-Blue;
+        padding-bottom: calc(2rem - 4px);
+        border-bottom: 4px solid $color-primary-Blended;
+      }
+    }
+  }
+
+  .cta-button {
+    // cursor: pointer;
+    // text-decoration: none;
+    // background-color: $color-neutral-White;
+    // background-image: linear-gradient(
+    //   to right,
+    //   $color-primary-Lime-Green,
+    //   $color-primary-Bright-Cyan
+    // );
+    // border-radius: (2.7rem / 2);
+    position: static;
+    // top: -100vh;
+    visibility: visible;
+
+    //   &:hover {
+    //     filter: brightness(1.2) grayscale(0.5);
+    //   }
+
+    //   &__wrap {
+    //     @include flex(row, center, center, 0);
+    //     padding: 0 2rem;
+    //     line-height: 2.7rem;
+    //     @include font(
+    //       0.9rem,
+    //       $font-weight-medium,
+    //       $color-neutral-Light-Grayish-Blue
+    //     );
+    //   }
+    &--header {
+      // hidden in mobile layout
+      position: unset;
+      top: -100vh;
+      visibility: visible;
+    }
   }
 
   .hamburger-menu {
