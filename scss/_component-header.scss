@@ -22,8 +22,6 @@
 
 .logo {
   @include reset;
-  // width: 139;
-  // height: 20;
 }
 
 .nav {
@@ -114,71 +112,20 @@
 //---------------------------------------------------
 
 @media screen and (min-width: 768px) and (max-width: 1157px) {
-  .l-header {
-    // @include reset;
-    // @include flex(row, space-between, center, 0);
-    // z-index: 1;
-    // position: sticky;
-    // position: absolute;
-    // padding: 0 1.5rem;
-    // top: 0;
-    // width: 100%;
-    // height: 4rem;
-    // background-color: $color-neutral-White;
-  }
-
-  .header__wrapper {
-    // @include reset;
-    // @include flex(row, space-between, center, 0);
-    // width: 100%;
-    // max-width: 1110px;
-    // height: 100%;
-    // padding: 0 1.4rem 0;
-  }
-
-  .logo {
-    // @include reset;
-    // width: 139;
-    // height: 20;
-  }
-
   .nav {
-    // @include reset;
-    // padding: 2rem 0;
-    // z-index: 1;
     position: static;
-    // top: 5.5rem;
-    // left: 1.5rem;
     width: auto;
-    // background-color: $color-neutral-White;
-    // border-radius: 4px;
-    // transition: all 0.2s ease;
-    // visibility: visible;
 
     &--desktop {
       visibility: visible;
     }
 
-    &--hidden {
-      //   top: -270px;
-      //   visibility: hidden;
-    }
-
     &__list {
-      // @include reset;
       @include flex(row, center, center, 2rem);
-      // height: 100%;
-    }
-
-    &__item {
-      // @include reset;
-      // list-style-type: none;
     }
 
     &__link {
-      // @include reset;
       @include font(0.9rem, $font-weight-medium, $color-neutral-Grayish-Blue);
-      // text-decoration: none;
 
       &:hover {
         color: $color-primary-Dark-Blue;
@@ -189,44 +136,12 @@
   }
 
   .cta-button {
-    // cursor: pointer;
-    // text-decoration: none;
-    // background-color: $color-neutral-White;
-    // background-image: linear-gradient(
-    //   to right,
-    //   $color-primary-Lime-Green,
-    //   $color-primary-Bright-Cyan
-    // );
-    // border-radius: (2.7rem / 2);
     position: static;
-    // top: -100vh;
     visibility: visible;
-
-    //   &:hover {
-    //     filter: brightness(1.2) grayscale(0.5);
-    //   }
-
-    //   &__wrap {
-    //     @include flex(row, center, center, 0);
-    //     padding: 0 2rem;
-    //     line-height: 2.7rem;
-    //     @include font(
-    //       0.9rem,
-    //       $font-weight-medium,
-    //       $color-neutral-Light-Grayish-Blue
-    //     );
-    //   }
-    &--header {
-      // hidden in mobile layout
-      // position: absolute;
-      // top: 0;
-      // visibility: visible;
-    }
   }
 
   .hamburger-menu {
-    // z-index: 2;
-    // visibility: visible;
+    // hidden in tablet layout
     position: absolute;
     top: -100vh;
     visibility: hidden;
@@ -240,23 +155,11 @@
 @media screen and (min-width: 1158px) {
   .l-header {
     padding: 0;
-    // position: absolute;
     height: 5rem;
   }
 
   .header__wrapper {
-    // @include reset;
-    // @include flex(row, space-between, center, 0);
-    // width: 100%;
-    // max-width: 1110px;
-    // height: 100%;
     padding: 0;
-  }
-
-  .logo {
-    // @include reset;
-    // width: 139;
-    // height: 20;
   }
 
   .nav {
@@ -266,26 +169,12 @@
       visibility: visible;
     }
 
-    &--hidden {
-      //   top: -270px;
-      //   visibility: hidden;
-    }
-
     &__list {
-      // @include reset;
       @include flex(row, center, center, 2rem);
-      // height: 100%;
-    }
-
-    &__item {
-      // @include reset;
-      // list-style-type: none;
     }
 
     &__link {
-      // @include reset;
       @include font(0.9rem, $font-weight-medium, $color-neutral-Grayish-Blue);
-      // text-decoration: none;
 
       &:hover {
         color: $color-primary-Dark-Blue;
@@ -296,35 +185,10 @@
   }
 
   .cta-button {
-    // cursor: pointer;
-    // text-decoration: none;
-    // background-color: $color-neutral-White;
-    // background-image: linear-gradient(
-    //   to right,
-    //   $color-primary-Lime-Green,
-    //   $color-primary-Bright-Cyan
-    // );
-    // border-radius: (2.7rem / 2);
     position: static;
-    // top: -100vh;
     visibility: visible;
 
-    //   &:hover {
-    //     filter: brightness(1.2) grayscale(0.5);
-    //   }
-
-    //   &__wrap {
-    //     @include flex(row, center, center, 0);
-    //     padding: 0 2rem;
-    //     line-height: 2.7rem;
-    //     @include font(
-    //       0.9rem,
-    //       $font-weight-medium,
-    //       $color-neutral-Light-Grayish-Blue
-    //     );
-    //   }
     &--header {
-      // hidden in mobile layout
       position: unset;
       top: -100vh;
       visibility: visible;
@@ -332,8 +196,7 @@
   }
 
   .hamburger-menu {
-    // z-index: 2;
-    // visibility: visible;
+    // hidden in desktop layout
     position: absolute;
     top: -100vh;
     visibility: hidden;
