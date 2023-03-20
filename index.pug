@@ -8,9 +8,10 @@ html(lang="en")
     link(rel="stylesheet", href="https://fonts.google.com/specimen/Public+Sans")
     link(rel="stylesheet", href="./styles/main.css")
     title Easybank landing page
+    meta(name="description", content="Experience the next generation of digital banking with Easybank. Our online banking platform provides a one-stop-shop for spending, saving, budgeting, and investing. Enjoy fast onboarding, simple budgeting, and an open API for managing all your finances in one place.")
     
   //BODY
-  body.l-body 
+  body.l-body
 
     //HEADER
     header.l-header 
@@ -32,7 +33,7 @@ html(lang="en")
           span.cta-button__wrap Request Invite
         img.hamburger-menu(src="./images/icon-hamburger.svg", alt="icon-close")
     
-    nav.nav--hidden
+    nav.nav.nav--hidden
       ul.nav__list
         li.nav__item 
           a.nav__link(href="#home") Home
@@ -47,6 +48,7 @@ html(lang="en")
     
     //MAIN
     main.l-main 
+      .overlay
 
       //HERO
       section.section.section--hero

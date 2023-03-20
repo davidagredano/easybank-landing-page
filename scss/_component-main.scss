@@ -7,6 +7,23 @@
   overflow: hidden;
 }
 
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to bottom,
+    $color-primary-Dark-Blue,
+    transparent
+  );
+  z-index: 1;
+}
+
 .section {
   @include reset;
   @include flex(column, center, center, 2rem);
@@ -172,9 +189,7 @@
   }
 }
 
-//---------------------------------------------------
 //----------------- @MEDIA TABLET -------------------
-//---------------------------------------------------
 
 @media screen and (min-width: 376px) and (max-width: 1157px) {
   .section {
@@ -197,9 +212,7 @@
   }
 }
 
-//---------------------------------------------------
 //---------------- @MEDIA DESKTOP -------------------
-//---------------------------------------------------
 
 @media screen and (min-width: 1158px) {
   .l-main {
