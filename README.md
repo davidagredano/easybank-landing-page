@@ -1,4 +1,4 @@
-# Product Landing Page — [Live Demo](https://davidagredano.github.io/product-landing-page/)
+# Easybank Landing Page — [Live Demo](https://davidagredano.github.io/easybank-landing-page/)
 
 [![product-landing-page-preview](https://github.com/davidagredano/product-landing-page/assets/118218196/583236a0-7649-4f76-aa54-f7ddacae56ba)](https://davidagredano.github.io/product-landing-page/)
 
